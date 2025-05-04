@@ -7,12 +7,15 @@ void exibeMenu();
 int main()
 {
 	int opt = 0;
-	
+
 	Product products[10];
-	int sizeProducts = 0; 
+	int sizeProducts = 0;
 
 	Client clients[10];
 	int sizeClients = 0;
+
+	Sale sales[10];
+	int sizeSales = 0;
 
 	do {
 		exibeMenu();
@@ -25,14 +28,17 @@ int main()
 			case 2:
 				createClient(clients, &sizeClients);
 				break;
-			case 3: 
-				makeSale();	
+			case 3:
+				makeSale(sales, &sizeSales, clients, sizeClients, products, sizeProducts);
 				break;
 			case 4:
-				showSales();
+				showSales(sales, sizeSales, clients, products);
 				break;
 			case 5:
 				listProducts(products, sizeProducts);
+				break;
+            case 6:
+				listClients(clients, sizeClients);
 				break;
 		}
 
@@ -42,7 +48,8 @@ int main()
 }
 
 void exibeMenu() {
-	printf("Digite o que deseja fazer:\n");
+    printDoubleLine();
+    printf("Digite o que deseja fazer:\n");
 	printf(" 1 - Cadastrar Produto\n");
 	printf(" 2 - Cadastrar Cliente\n");
 	printf(" 3 - Realizar Venda\n");
@@ -50,4 +57,5 @@ void exibeMenu() {
 	printf(" 5 - Vizualizar Produtos\n");
 	printf(" 6 - Vizualizar Clientes\n");
 	printf(" 999 - Sair do Sistema\n");
+	printSingleLine();
 }
