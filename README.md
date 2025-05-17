@@ -20,6 +20,8 @@ Este é um sistema simples de controle de vendas, desenvolvido em linguagem C, c
 - [ ] Atualização de dados de produtos e clientes
 - [ ] Validação de exclusão para evitar remoção de clientes ou produtos com vendas registradas
 - [ ] Inativação de clientes e produtos (tornar inutilizável sem perder registros de vendas)
+- [ ] Menu simplificado e modularizado
+- [ ] Tratar strings com espaços
 
 ---
 
