@@ -40,6 +40,18 @@ int main()
             case 6:
 				listClients(clients, sizeClients);
 				break;
+            case 7:
+                deleteProduct(products, &products);
+                break;
+            case 8:
+                deleteClient(clients, &sizeClients);
+                break;
+            case 9:
+                //updateProduct(products, sizeProducts);
+                break;
+            case 10:
+                //updateClient(clients, sizeClients);
+                break;
 		}
 
 	} while (opt != 999);
@@ -56,6 +68,10 @@ void exibeMenu() {
 	printf(" 4 - Vizualizar Vendas\n");
 	printf(" 5 - Vizualizar Produtos\n");
 	printf(" 6 - Vizualizar Clientes\n");
+	printf(" 7 - Deletar Produto\n");
+	printf(" 8 - Deletar Cliente\n");
+	//printf(" 9 - Atualizar Produto\n");
+	//printf(" 10 - Atualizar Cliente\n");
 	printf(" 999 - Sair do Sistema\n");
 	printSingleLine();
 }
