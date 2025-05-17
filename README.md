@@ -26,7 +26,7 @@ Este é um sistema simples de controle de vendas, desenvolvido em linguagem C, c
 ## 📁 Estrutura do Projeto
 
 📦 sistema-vendas-c
-├── main.c # Função principal e menu
-├── actions.c # Funções de negócio (cadastro, venda, listagem etc.)
-├── utils.c # Funções auxiliares e utilitárias
-└── structs.c # Definições das structs Product, Client, Sale
+-├── main.c # Função principal e menu
+-├── actions.c # Funções de negócio (cadastro, venda, listagem etc.)
+-├── utils.c # Funções auxiliares e utilitárias
+-└── structs.c # Definições das structs Product, Client, Sale
