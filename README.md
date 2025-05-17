@@ -25,8 +25,17 @@ Este é um sistema simples de controle de vendas, desenvolvido em linguagem C, c
 
 ## 📁 Estrutura do Projeto
 
-📦 sistema-vendas-c
--├── main.c # Função principal e menu
--├── actions.c # Funções de negócio (cadastro, venda, listagem etc.)
--├── utils.c # Funções auxiliares e utilitárias
--└── structs.c # Definições das structs Product, Client, Sale
+```text
+sistema-vendas-c/
+├── main.c         # Função principal e menu de interação
+├── actions.c      # Regras de negócio: cadastro, venda, listagem, exclusão
+├── utils.c        # Funções auxiliares: validações, impressão, busca
+├── structs.c      # Definições das structs: Product, Client, Sale, etc.
+└── README.md      # Documentação do projeto
+```
+
+## ❗ Limitações atuais
+
+- Capacidade fixa: até 10 produtos, 10 clientes e 10 vendas
+- Sem persistência: dados são armazenados apenas em memória (RAM)
+- Sem uso de ponteiros dinâmicos (alocação estática)
