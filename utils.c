@@ -24,12 +24,22 @@ int getIndexClient(Client clients[], int id) {
     return -1;
 }
 
+int getLastIdClient(Client clients[], int size) {
+    if (size == 0) return 0;
+    return clients[size - 1].id;
+}
+
 int getIndexProduct(Product products[], int id) {
     for (int i = 0; i < 10; i++) {
         if (products[i].id == id) return i;
     }
 
     return -1;
+}
+
+int getLastIdProduct(Product products[], int size) {
+    if (size == 0) return 0;
+    return products[size - 1].id;
 }
 
 int printDoubleLine() {
@@ -47,3 +57,4 @@ int printSingleLine() {
     printf("\n");
     return 0;
 }
+
