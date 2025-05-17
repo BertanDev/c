@@ -13,7 +13,7 @@ void createProduct(Product products[], int *size) {
     printf("Digite o preço do produto:\n");
     scanf("%f", &products[*size].price);
 
-    products[*size].id = *size + 1;
+    products[*size].id = getLastIdProduct(products, *size) + 1;
 
     printf("Produto cadastrado com sucesso!\n");
     printDoubleLine();
@@ -28,7 +28,7 @@ void createClient(Client clients[], int *size) {
     printf("Digite o nome do cliente:\n");
     scanf("%s", clients[*size].name);
 
-    clients[*size].id = *size + 1;
+    clients[*size].id = getLastIdClient(clients, *size) + 1;
 
 	printf("Cliente cadastrado com sucesso!\n");
 	printDoubleLine();
@@ -97,7 +97,7 @@ void listProducts(Product products[], int size) {
     printSingleLine();
     printf("\nLista de Produtos Cadastrados:\n");
     for (int i = 0; i < size; i++) {
-        printf("%d - %s: R$%.2f\n", i + 1, products[i].descr, products[i].price);
+        printf("%d - %s: R$%.2f\n", products[i].id, products[i].descr, products[i].price);
     }
 }
 
@@ -110,3 +110,56 @@ void listClients(Client clients[], int size) {
         printf("%d - %s\n", clients[i].id, clients[i].name);
     }
 }
+
+void deleteProduct(Product products[], int *size) {
+    if (warningEmpty("Nenhum produto cadastrado ainda.", *size)) return;
+
+    int idToDelete, indexToDelete;
+
+    listProducts(products, *size);
+    printf("Digite o código para excluir:\n");
+    scanf("%d", &idToDelete);
+    indexToDelete = getIndexProduct(products, idToDelete);
+
+    for(int i = indexToDelete; i < *size - 1; i++) {
+        products[i] = products[i + 1];
+    };
+
+    (*size)--;
+}
+
+void deleteClient(Client clients[], int *size) {
+    if (warningEmpty("Nenhum cliente cadastrado ainda.", *size)) return;
+
+    int idToDelete, indexToDelete;
+
+    listClients(clients, *size);
+    printf("Digite o código para excluir:\n");
+    scanf("%d", &idToDelete);
+    indexToDelete = getIndexClient(clients, idToDelete);
+
+    for(int i = indexToDelete; i < *size - 1; i++) {
+        clients[i] = clients[i + 1];
+    };
+
+    (*size)--;
+}
+
+/**void updateProduct(Product products[], int size) {
+    if (warningEmpty("Nenhum produto cadastrado ainda.", size)) return;
+
+    int idToUpdate, indexToUpdate;
+    char newDescr[20];
+	float newPrice;
+
+    listProducts(products, size);
+    printf("Digite o código para atualizar:\n");
+    scanf("%d", &idToUpdate);
+    indexToUpdate = getIndexProduct(products, idToUpdate);
+    printf("Digite a descrição do produto:\n");
+    scanf("%s", newDescr);
+    printf("Digite o preço do produto:\n");
+    scanf("%s", &newPrice);
+    products[indexToUpdate].descr = newDescr;
+    products[indexToUpdate].price = newPrice;
+}**/
