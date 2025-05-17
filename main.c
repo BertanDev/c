@@ -18,28 +18,28 @@ int main()
 	int sizeSales = 0;
 
 	do {
-		exibeMenu();
-		scanf("%d", &opt);
+	  exibeMenu();
+	  scanf("%d", &opt);
 
-		switch (opt) {
-			case 1:
-				createProduct(products, &sizeProducts);
-				break;
-			case 2:
-				createClient(clients, &sizeClients);
-				break;
-			case 3:
-				makeSale(sales, &sizeSales, clients, sizeClients, products, sizeProducts);
-				break;
-			case 4:
-				showSales(sales, sizeSales, clients, products);
-				break;
-			case 5:
-				listProducts(products, sizeProducts);
-				break;
+	  switch (opt) {
+	    case 1:
+		createProduct(products, &sizeProducts);
+		break;
+	    case 2:
+		createClient(clients, &sizeClients);
+		break;
+	    case 3:
+		makeSale(sales, &sizeSales, clients, sizeClients, products, sizeProducts);
+		break;
+	    case 4:
+		showSales(sales, sizeSales, clients, products);
+		break;
+	    case 5:
+		listProducts(products, sizeProducts);
+		break;
             case 6:
-				listClients(clients, sizeClients);
-				break;
+		listClients(clients, sizeClients);
+		break;
             case 7:
                 deleteProduct(products, &products);
                 break;
@@ -52,7 +52,7 @@ int main()
             case 10:
                 //updateClient(clients, sizeClients);
                 break;
-		}
+	  }
 
 	} while (opt != 999);
 
