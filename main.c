@@ -41,16 +41,16 @@ int main()
 		listClients(clients, sizeClients);
 		break;
             case 7:
-                deleteProduct(products, &products);
+                deleteProduct(products, &sizeProducts);
                 break;
             case 8:
                 deleteClient(clients, &sizeClients);
                 break;
             case 9:
-                //updateProduct(products, sizeProducts);
+                updateProduct(products, sizeProducts);
                 break;
             case 10:
-                //updateClient(clients, sizeClients);
+                updateClient(clients, sizeClients);
                 break;
 	  }
 
@@ -70,8 +70,8 @@ void exibeMenu() {
 	printf(" 6 - Vizualizar Clientes\n");
 	printf(" 7 - Deletar Produto\n");
 	printf(" 8 - Deletar Cliente\n");
-	//printf(" 9 - Atualizar Produto\n");
-	//printf(" 10 - Atualizar Cliente\n");
+	printf(" 9 - Atualizar Produto\n");
+	printf(" 10 - Atualizar Cliente\n");
 	printf(" 999 - Sair do Sistema\n");
 	printSingleLine();
 }
