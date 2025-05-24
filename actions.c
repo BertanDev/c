@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "structs.c"
 #include "utils.c"
@@ -145,7 +146,7 @@ void deleteClient(Client clients[], int *size) {
     (*size)--;
 }
 
-/**void updateProduct(Product products[], int size) {
+void updateProduct(Product products[], int size) {
     if (warningEmpty("Nenhum produto cadastrado ainda.", size)) return;
 
     int idToUpdate, indexToUpdate;
@@ -159,7 +160,22 @@ void deleteClient(Client clients[], int *size) {
     printf("Digite a descrição do produto:\n");
     scanf("%s", newDescr);
     printf("Digite o preço do produto:\n");
-    scanf("%s", &newPrice);
-    products[indexToUpdate].descr = newDescr;
+    scanf("%f", &newPrice);
+    strcpy(products[indexToUpdate].descr, newDescr);
     products[indexToUpdate].price = newPrice;
-}**/
+}
+
+void updateClient(Client clients[], int size) {
+    if (warningEmpty("Nenhum cliente cadastrado ainda.", size)) return;
+
+    int idToUpdate, indexToUpdate;
+    char newName[20];
+
+    listClients(clients, size);
+    printf("Digite o código para atualizar:\n");
+    scanf("%d", &idToUpdate);
+    indexToUpdate = getIndexClient(clients, idToUpdate);
+    printf("Digite o nome do cliente:\n");
+    scanf("%s", newName);
+    strcpy(clients[indexToUpdate].name, newName);
+}
